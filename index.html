@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal Beauty - Form Tambah Produk</title>
+    <!-- Pemanggilan File CSS Terpisah -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Tema Atas -->
+    <header class="header-merah">
+        <div class="header-container">
+            <div class="header-text">
+                <h1>Ethereal Beauty</h1>
+                <p>Platform pendataan produk skincare & kecantikan</p>
+            </div>
+            <nav class="header-nav">
+                <a href="index.html" class="active">Form Input</a>
+                <a href="#product-container">Katalog Produk</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-preview-wrapper">
+            <!-- Form Input Interaktif -->
+            <section class="card-box">
+                <h2>Tambah Produk Baru - Ethereal Beauty</h2>
+                
+                <form id="product-form">
+                    <div class="form-group">
+                        <label for="product-name">Nama Produk:</label>
+                        <input type="text" id="product-name" placeholder="Contoh: Skintific Gel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-category">Kategori:</label>
+                        <select id="product-category">
+                            <option value="">-- Pilih Kategori --</option>
+                            <option value="Moisturizer">Moisturizer</option>
+                            <option value="Serum">Serum</option>
+                            <option value="Sunscreen">Sunscreen</option>
+                            <option value="Toner">Toner</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-price">Harga (Rp):</label>
+                        <input type="number" id="product-price" placeholder="Contoh: 150000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-stock">Stok Awal:</label>
+                        <input type="number" id="product-stock" placeholder="Contoh: 10">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Simpan Produk</button>
+                </form>
+
+                <!-- Pesan Feedback Visual (Hijau/Merah) -->
+                <div id="form-feedback"></div>
+            </section>
+
+            <!-- Live Preview Produk -->
+            <section class="card-box preview-section">
+                <h3>Live Preview Produk</h3>
+                <div class="preview-item"><strong>Nama Produk:</strong> <span id="preview-name">-</span></div>
+                <div class="preview-item"><strong>Kategori:</strong> <span id="preview-category">-</span></div>
+                <div class="preview-item"><strong>Harga:</strong> <span id="preview-price">-</span></div>
+                <div class="preview-item"><strong>Stok Awal:</strong> <span id="preview-stock">-</span></div>
+            </section>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Tambahan: Wadah Katalog Kartu Produk -->
+        <div class="catalog-section">
+            <h3>Daftar Katalog Produk</h3>
+            <div id="product-container" class="product-grid">
+                <!-- Kartu produk akan muncul di sini secara dinamis -->
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Bagian Tabel Kelola Data Produk dengan Tombol Aksi -->
+        <section class="card-box" style="margin-top: 30px;">
+            <div class="table-header-flex">
+                <h2>Kelola Data Produk</h2>
+                <div class="table-filters">
+                    <input type="text" id="search-input" placeholder="Cari nama produk...">
+                    <select id="category-filter">
+                        <option value="">Semua Jenis</option>
+                        <option value="Moisturizer">Moisturizer</option>
+                        <option value="Serum">Serum</option>
+                        <option value="Sunscreen">Sunscreen</option>
+                        <option value="Toner">Toner</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Produk</th>
+                            <th>Harga</th>
+                            <th>Jenis</th>
+                            <th>Stok</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-product-body">
+                        <!-- Baris data tabel akan dirender otomatis via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination-footer">
+                <button class="btn-page" disabled>« Sebelumnya</button>
+                <span id="page-info">Halaman 1 dari 1</span>
+                <button class="btn-page" disabled>Selanjutnya »</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pemanggilan File JS Terpisah -->
+    <script src="assets/js/dom_renderer.js"></script>
+   
+</body>
+</html>
